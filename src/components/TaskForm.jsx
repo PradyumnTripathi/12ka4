@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./TaskForm.css";
-import Tag from './tag';
+import Tag from './Tag';
 
 const TaskForm = ({ setTasks }) => {
   const [taskData, setTaskData] = useState({
@@ -31,19 +31,15 @@ const TaskForm = ({ setTasks }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(taskData);
-
-    // Add the task data to the task list
-    setTasks(prev => [...prev, taskData]);
-
-    // Reset form
+    setTasks((prev) => {
+      return [...prev, taskData];
+    });
     setTaskData({
       task: "",
       status: "todo",
       tags: [],
-      priority: "low", // Reset priority to default
     });
   };
-
   return (
     <header className='app_header'>
       <form onSubmit={handleSubmit}>

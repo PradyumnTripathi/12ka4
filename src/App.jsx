@@ -32,7 +32,7 @@ const App = () => {
   }
 
   const onDrop=(status,position)=>{
-    console.log(`${activeCard} is going to place into ${status} amd at the  poisition ${position}`);
+    // console.log(${activeCard} is going to place into ${status} amd at the  poisition ${position});
 
     if(activeCard===null || activeCard=== undefined) return;
 
