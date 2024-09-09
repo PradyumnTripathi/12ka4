@@ -8,7 +8,7 @@
 
 /* setting form width */
 .app_header > form {
-    width: 40%;
+    width: 60%;
 }
 
 
@@ -25,6 +25,23 @@
     width: 100%;
 }
 
+.task_priority {
+    padding: 8px;
+    border-radius: 10px; /* Make the box curvy */
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.task_priority:focus {
+    border-color: #007BFF; /* Change the border color on focus */
+}
+
+.task_priority:hover {
+    border-color: #007BFF; /* Change the border color on hover */
+}
 
 .task_input::placeholder {
     color: #686868;

@@ -2,9 +2,6 @@ import React, {useState , useEffect} from 'react'
 
 
 
-
-
-
 import "./App.css";
 import TaskForm from './components/TaskForm';
 import TaskColumn from './components/TaskColumn';
@@ -19,6 +16,10 @@ const oldTasks= localStorage.getItem("tasks")
 
 const App = () => {
   const [tasks, setTasks]=useState(JSON.parse(oldTasks) || []);
+  const [activeCard,setActiveCard]=useState(null)
+
+
+  
 
   useEffect(()=> {
     localStorage.setItem("tasks",JSON.stringify(tasks))
@@ -29,6 +30,24 @@ const App = () => {
     setTasks(newTasks)
 
   }
+
+  const onDrop=(status,position)=>{
+    console.log(`${activeCard} is going to place into ${status} amd at the  poisition ${position}`);
+
+    if(activeCard===null || activeCard=== undefined) return;
+
+    const taskToMove=tasks[activeCard];
+    const updatedTasks=tasks.filter((task,index)=>index!==activeCard)
+
+    updatedTasks.splice(position,0,{
+      ...taskToMove,
+      status: status
+
+
+    })
+
+    setTasks(updatedTasks)
+  };
 
 
   return (
@@ -43,22 +62,29 @@ const App = () => {
           tasks={tasks}
           status="todo"
           handleDelete={handleDelete}
+          setActiveCard={setActiveCard}
+          onDrop={onDrop}
+
 
         />   
         <TaskColumn 
-          title='Doing'
+          title='In Progress'
           icon={doingIcon}
           tasks={tasks}
           status="doing"
           handleDelete={handleDelete}
+          setActiveCard={setActiveCard}
+          onDrop={onDrop}
           /> 
 
         <TaskColumn 
-          title='Done'
+          title='Completed'
           icon={doneIcon}
           tasks={tasks}
           status="Done"
           handleDelete={handleDelete}
+          setActiveCard={setActiveCard}
+          onDrop={onDrop}
           />
 
 
@@ -66,9 +92,11 @@ const App = () => {
        
         
       </main>
+
+      
     </div>
    
-  )
-}
+  );
+};
 
 export default App;

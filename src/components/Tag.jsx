@@ -6,10 +6,10 @@ import "./Tag.css";
 const Tag=({tagName,selectTag, selected})=> {
     // console.log("props",props);
     const tagStyle={
-        HTML: {backgroundColor: "#fda821"},
-        CSS: {backgroundColor: "#15D4C8"},
-        Javascript: {backgroundColor: "#ffd12c"},
-        React: {backgroundColor: "#4cdafc"},
+        Research: {backgroundColor: "#fda821"},
+        Planning: {backgroundColor: "#15D4C8"},
+        Execution: {backgroundColor: "#ffd12c"},
+        Review: {backgroundColor: "#4cdafc"},
         default: {backgroundColor: "#f9f9f9"},
 
 
