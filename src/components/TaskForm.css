@@ -1,0 +1,78 @@
+/* to bringing up the app upper header to the center and giving it style */
+.app_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+/* setting form width */
+.app_header > form {
+    width: 60%;
+}
+
+
+/* it is managing the style of task input part */
+.task_input {
+    font-size: 20px;
+    font-weight: 500;
+    background: #f9f9f9;
+    color: #000;
+    border: 1px solid #dfe3e6;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.task_priority {
+    padding: 8px;
+    border-radius: 10px; /* Make the box curvy */
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.task_priority:focus {
+    border-color: #007BFF; /* Change the border color on focus */
+}
+
+.task_priority:hover {
+    border-color: #007BFF; /* Change the border color on hover */
+}
+
+.task_input::placeholder {
+    color: #686868;
+}
+
+
+.task_form_bottom_line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task_status {
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid #999;
+    border-radius: 5px;
+    width: 120px;
+    height: 40px;
+    padding: 0 5px;
+}
+
+.task_submit {
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #6457f9;
+    color: #fff;
+    border-radius: 5px;
+    height: 40px;
+    padding: 3px 13px;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+}
